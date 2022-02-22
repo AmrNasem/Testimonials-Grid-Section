@@ -1,0 +1,145 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Moderate_violet: hsl(263, 55%, 52%);
+  --Very_dark_grayish_blue: hsl(217, 19%, 35%);
+  --Very_dark_blackish_blue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+  --Light_grayish_blue: hsl(210, 46%, 95%);
+  --Light_gray: hsl(0, 0%, 81%);
+}
+
+body {
+  background-color: var(--Light_grayish_blue);
+  font-family: "Barlow Semi condensed";
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "one one two three"
+    "four five five three";
+  gap: 30px;
+  width: 76.8%;
+  margin: 160px auto;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+section {
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 10px 20px 50px var(--Light_gray);
+}
+
+section .id {
+  display: flex;
+}
+section .id img {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  margin: 0 15px 20px 0;
+}
+
+.one .id img,
+.five .id img {
+  border: 2px solid #A775F1;
+}
+
+.five .id img {
+  border-color: var(--Moderate_violet);
+}
+
+section .id .name {
+  font-size: 12px;
+}
+
+section .id .status {
+  font-size: 10px;
+  opacity: 50%;
+}
+
+section .comment {
+  font-size: 20px;
+  word-spacing: 1.7px;
+}
+
+section .exp {
+  font-size: 12px;
+  margin-top: 18px;
+  line-height: 1.5;
+  opacity: 70%;
+}
+
+.one {
+  grid-area: one;
+  background: url(images/bg-pattern-quotation.svg) no-repeat 78.8% 0;
+  background-color: var(--Moderate_violet);
+  color: var(--Light_grayish_blue);
+}
+
+.two {
+  grid-area: two;
+  background-color: var(--Very_dark_grayish_blue);
+  color: var(--Light_grayish_blue);
+}
+
+.three {
+  grid-area: three;
+  background-color: white;
+  color: var(--Very_dark_grayish_blue);
+  font-weight: bold;
+}
+
+.four {
+  grid-area: four;
+  background-color: white;
+  color: var(--Very_dark_grayish_blue);
+  font-weight: bold;
+}
+
+.five {
+  grid-area: five;
+  background-color: var(--Very_dark_blackish_blue);
+  color: var(--Light_grayish_blue);
+}
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "one two"
+      "three three"
+      "four five";
+    margin: 50px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "one" "two" "four" "five" "three";
+    width: 90%;
+    gap: 20px;
+  }
+
+  .one {
+    background-size: 105px;
+    background-position: 90% 0;
+  }
+
+  section .id img {
+    margin-bottom: 15px;
+  }
+}
